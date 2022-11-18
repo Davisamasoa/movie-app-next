@@ -1,26 +1,32 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	background-color: rgb(14, 13, 13);
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+img {
+	max-width: none !important;
+	min-height: none !important;
 }
 
-* {
-  box-sizing: border-box;
+.row::-webkit-scrollbar {
+	display: none;
+	border-radius: 10px;
+	height: 10px;
+	margin-block: 50px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.row::-webkit-scrollbar-thumb {
+	background-color: #2e2e2e;
+	border-radius: 10px;
+	margin-block: 50px;
+}
+
+.row::-webkit-scrollbar-track {
+	border-radius: 10px;
+}
+header {
+	font-family: "Bebas Neue", cursive;
 }
