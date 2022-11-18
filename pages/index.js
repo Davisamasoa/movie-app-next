@@ -1,6 +1,6 @@
 import Head from "next/head";
 import { CategoryRow } from "../components/CategoryRow";
-import { categories } from "../services/api";
+import { categories } from "./api/services/api";
 
 export default function Home() {
 	return (

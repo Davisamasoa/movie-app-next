@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { api } from "../services/api";
+import { api, apiKey } from "../pages/api/services/api";
 import { CategoryCard } from "./CategoryCard";
 
 export function CategoryRow({ title, path }) {
@@ -11,6 +11,7 @@ export function CategoryRow({ title, path }) {
 
 	useEffect(() => {
 		api.get(path).then(({ data }) => setMovies(data.results));
+		console.log(apiKey);
 	}, [path]);
 
 	function handleNavigateButton(e) {
