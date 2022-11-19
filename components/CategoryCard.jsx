@@ -6,11 +6,11 @@ export function CategoryCard({ title, imageUrl, movie }, props) {
 		movie(movieWidth.current.offsetWidth);
 	}, []);
 
-	// window.addEventListener("resize", () => {
-	// 	setTimeout(() => {
-	// 		movie(movieWidth.current.offsetWidth);
-	// 	}, 500);
-	// });
+	window.addEventListener("resize", () => {
+		setTimeout(() => {
+			movie(movieWidth.current.offsetWidth);
+		}, 500);
+	});
 
 	return (
 		<picture
