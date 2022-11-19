@@ -17,7 +17,7 @@ export default function Series() {
 				/>
 			</Head>
 
-			<div className="md:px-9 sm:px-7 px-4 py-4">
+			<div className="md:px-9 sm:px-7 px-4 py-4 App">
 				<NavBar serie={true} />
 
 				{serieCategories.map(({ title, path }) => (

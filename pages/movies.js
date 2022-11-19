@@ -17,7 +17,7 @@ export default function Home() {
 				/>
 			</Head>
 
-			<div className="md:px-9 sm:px-7 px-4 py-4">
+			<div className="md:px-9 sm:px-7 px-4 py-4 App">
 				<NavBar filme={true} />
 
 				{movieCategories.map(({ title, path }) => (

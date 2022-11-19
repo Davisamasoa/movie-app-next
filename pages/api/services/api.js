@@ -8,7 +8,7 @@ export const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
 export const movieCategories = [
 	{
-		title: "Populares",
+		title: "Em Alta",
 		path: `/trending/movie/week?api_key=${apiKey}&language=pt-BR`,
 	},
 	{
@@ -48,7 +48,7 @@ export const movieCategories = [
 
 export const serieCategories = [
 	{
-		title: "Populares",
+		title: "Em Alta",
 		path: `/trending/tv/week?api_key=${apiKey}&language=pt-BR`,
 	},
 
