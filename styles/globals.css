@@ -35,7 +35,7 @@ header ul {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.App {
+section {
 	animation: opacity 0.7s ease-in-out;
 }
 
