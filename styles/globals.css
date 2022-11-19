@@ -30,3 +30,7 @@ img {
 header {
 	font-family: "Bebas Neue", cursive;
 }
+
+header ul {
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
