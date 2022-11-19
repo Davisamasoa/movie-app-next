@@ -11,7 +11,6 @@ export function CategoryRow({ title, path }) {
 
 	useEffect(() => {
 		api.get(path).then(({ data }) => setMovies(data.results));
-		console.log(apiKey);
 	}, [path]);
 
 	function handleNavigateButton(e) {
@@ -27,8 +26,6 @@ export function CategoryRow({ title, path }) {
 				: (navigate += movieWidth + gap);
 			moviesDiv.current.scrollLeft = navigate;
 		}
-
-		console.log(moviesDiv.current.style.gap);
 	}
 
 	function navigateOpacityOn() {
