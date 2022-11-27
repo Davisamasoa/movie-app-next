@@ -62,7 +62,7 @@ export function CategoryRow({ title, path }) {
 						onClick={handleNavigateButton}
 						className="-right-5 lg:top-[140px] md:top-[110px] z-20 text-yellow-200 text-4xl absolute   h-full w-20"
 					>
-						<i className="text-yellow-200 text-4x bi bi-caret-right"></i>
+						<i className="text-yellow-200 lg:text-4xl md:text-3xl bi bi-caret-right"></i>
 					</button>
 				</div>
 
