@@ -8,17 +8,29 @@ export function NavBar(props) {
 			<nav className="">
 				<ul className="  text-white font-light tracking-wider flex gap-5 justify-center items-center ">
 					<li
-						className={!props.index ? "transition duration-200 hover:opacity-70" : "font-bold text-amber-200"}
+						className={
+							props.currentPage !== "index"
+								? "transition duration-200 hover:opacity-70"
+								: "font-bold text-amber-200"
+						}
 					>
 						<Link href={"/"}>Início</Link>
 					</li>
 					<li
-						className={!props.filme ? "transition duration-200 hover:opacity-70" : "font-bold text-amber-200"}
+						className={
+							props.currentPage !== "filme"
+								? "transition duration-200 hover:opacity-70"
+								: "font-bold text-amber-200"
+						}
 					>
 						<Link href={"/movies"}>Filmes</Link>
 					</li>
 					<li
-						className={!props.serie ? "transition duration-200 hover:opacity-70" : "font-bold text-amber-200"}
+						className={
+							props.currentPage !== "serie"
+								? "transition duration-200 hover:opacity-70"
+								: "font-bold text-amber-200"
+						}
 					>
 						<Link href={"/series"}>Séries</Link>
 					</li>
@@ -28,7 +40,7 @@ export function NavBar(props) {
 							className="transition duration-200 hover:opacity-70"
 							href="https://github.com/Davisamasoa"
 						>
-							<i class="bi bi-github text-2xl "></i>
+							<i className="bi bi-github text-2xl "></i>
 						</a>
 					</li>
 				</ul>

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { api, apiKey } from "../pages/api/services/api";
+import { api } from "../pages/api/services/api";
 import { CategoryCard } from "./CategoryCard";
 
 export function CategoryRow({ title, path }) {
@@ -53,7 +53,7 @@ export function CategoryRow({ title, path }) {
 				>
 					<button
 						onClick={handleNavigateButton}
-						className="-left-5 lg:top-[140px] md:top-[110px]  z-20 text-yellow-200 text-4xl absolute   h-full w-20"
+						className="-left-5  lg:top-[140px] md:top-[110px]  z-20 text-yellow-200 text-4xl absolute   h-full w-20"
 					>
 						<i className="text-yellow-200 lg:text-4xl md:text-3xl   bi bi-caret-left"></i>
 					</button>
