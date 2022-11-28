@@ -67,7 +67,7 @@ export function CategoryRow({ title, path }) {
 				</div>
 
 				{movies.map(({ id, title, poster_path }) => (
-					<CategoryCard key={id} title={title} imageUrl={poster_path} movie={setMovieWidth} />
+					<CategoryCard key={id} id={id} title={title} imageUrl={poster_path} movie={setMovieWidth} />
 				))}
 			</div>
 		</section>
