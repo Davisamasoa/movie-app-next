@@ -10,8 +10,8 @@ export function NavBar(props) {
 					<li
 						className={
 							props.currentPage !== "index"
-								? "transition duration-200 hover:opacity-70"
-								: "font-bold text-amber-200"
+								? "transition duration-200 hover:opacity-70 border-b-2 border-transparent py-2"
+								: "border-b-2 border-amber-200 py-2"
 						}
 					>
 						<Link href={"/"}>Início</Link>
@@ -19,8 +19,8 @@ export function NavBar(props) {
 					<li
 						className={
 							props.currentPage !== "filme"
-								? "transition duration-200 hover:opacity-70"
-								: "font-bold text-amber-200"
+								? "transition duration-200 hover:opacity-70 border-b-2 border-transparent py-2"
+								: "border-b-2 border-amber-200 py-2"
 						}
 					>
 						<Link href={"/movies"}>Filmes</Link>
@@ -28,8 +28,8 @@ export function NavBar(props) {
 					<li
 						className={
 							props.currentPage !== "serie"
-								? "transition duration-200 hover:opacity-70"
-								: "font-bold text-amber-200"
+								? "transition duration-200 hover:opacity-70 border-b-2 border-transparent py-2"
+								: "border-b-2 border-amber-200 py-2"
 						}
 					>
 						<Link href={"/series"}>Séries</Link>
