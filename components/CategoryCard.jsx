@@ -17,10 +17,9 @@ export function CategoryCard({ title, id, imageUrl, movie }, props) {
 			<Link
 				target={"_blank"}
 				href={{
-					pathname: "/film",
+					pathname: `/${id}`,
 					query: {
 						type: title == undefined ? "serie" : "movie",
-						id: id,
 					},
 				}}
 			>
