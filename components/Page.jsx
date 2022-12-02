@@ -1,8 +1,15 @@
 import Head from "next/head";
 import { CategoryRow } from "./CategoryRow";
 import { NavBar } from "./NavBar";
+import Skeleton from "./Skeleton";
 
 export default function Page({ categorie, currentPage, titlePage }) {
+	const categoryRowSkeleton = [1, 2, 3];
+
+	for (let i = 0; i < 2; i++) {
+		categoryRowSkeleton.push("");
+	}
+
 	return (
 		<div>
 			<Head>
