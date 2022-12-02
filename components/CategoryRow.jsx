@@ -41,7 +41,8 @@ export function CategoryRow({ title, path }) {
 
 	return (
 		<section className=" mt-4 mb-5 z-0 relative">
-			{!movies.length > 0 ? (
+			{console.log(movies)}
+			{!movies[19] ? (
 				<Skeleton />
 			) : (
 				<>
