@@ -36,23 +36,9 @@ header ul {
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-section {
-	animation: opacity 1s linear;
-}
-
 i {
 	background-color: rgba(0, 0, 0, 0.6);
 	border-radius: 5px;
-}
-
-@keyframes opacity {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
 }
 
 @keyframes skeleton {
