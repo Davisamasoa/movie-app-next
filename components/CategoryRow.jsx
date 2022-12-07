@@ -19,12 +19,12 @@ export function CategoryRow({ title, path }) {
 		const gap = 5;
 
 		if (e.currentTarget.classList[0] == "-left-5") {
-			navigate <= 0 ? navigate : (navigate -= movieWidth + gap);
+			navigate <= 0 ? navigate : (navigate -= (movieWidth + gap) * 5);
 			moviesDiv.current.scrollLeft = navigate;
 		} else {
 			navigate >= moviesDiv.current.scrollWidth - moviesDiv.current.clientWidth
 				? navigate
-				: (navigate += movieWidth + gap);
+				: (navigate += (movieWidth + gap) * 5);
 			moviesDiv.current.scrollLeft = navigate;
 		}
 	}
