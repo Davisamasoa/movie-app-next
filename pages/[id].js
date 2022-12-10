@@ -52,7 +52,7 @@ export default function Film({ title, img, description, releaseDate }) {
 	return (
 		<>
 			<Head>
-				<title>Movie App | {title}</title>
+				<title>{title} - Movie App</title>
 			</Head>
 
 			<div className="md:px-9 sm:px-7 px-4 py-4 App">
