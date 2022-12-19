@@ -40,7 +40,7 @@ export function CategoryRow({ title, path }) {
 	}
 
 	return (
-		<section className=" mt-4 mb-5 z-0 relative">
+		<section className=" mt-4 mb-5 z-0 relative ">
 			{console.log(movies)}
 			{!movies[19] ? (
 				<Skeleton />
@@ -51,7 +51,7 @@ export function CategoryRow({ title, path }) {
 						ref={moviesDiv}
 						onMouseEnter={() => navigateOpacityOn()}
 						onMouseLeave={() => navigateOpacityOff()}
-						className="flex gap-[5px] scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
+						className="flex lg:min-h-[342px] md:min-h-[270px] min-h-[174px] gap-[5px] scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
 					>
 						<div
 							ref={buttonsDiv}
