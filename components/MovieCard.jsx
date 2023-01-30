@@ -25,7 +25,7 @@ export function MovieCard({ title, id, imageUrl, movie }, props) {
 			>
 				<div className="relative">
 					<img
-						className="transition-all duration-300 rounded-md   md:w-40 lg:w-52 sm:w-24 w-24 lg:hover:w-56 md:hover:w-44 hover:w-28"
+						className="transition-all duration-300 rounded-md   md:w-40 lg:w-52 sm:w-24 w-24 lg:hover:w-56 md:hover:w-44"
 						src={`https://image.tmdb.org/t/p/w500/${imageUrl}`}
 					/>
 				</div>
