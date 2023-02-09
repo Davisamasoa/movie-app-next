@@ -5,33 +5,33 @@ import { NavBar } from "../components/NavBar";
 import { apiKey } from "./api/services/api";
 
 let currentPager = 1;
-
+let totalPages;
+let indexSearch = true;
 export default function Search() {
 	const [inputSearchValue, useInputSearchValue] = useState("");
-	const [searchData, useSearchData] = useState();
-	const [totalPages, useTotalPages] = useState();
-	const [indexSearch, useIndexSearch] = useState(true);
-	const [currentPage, useCurrentPage] = useState(1);
+	const [searchData, setSearchData] = useState();
+
+	const [currentPage, setCurrentPage] = useState(1);
 	async function execFetch(url) {
 		const data = await fetch(url)
 			.then((res) => res.json())
 			.catch((err) => console.log(`Erro: ${err}`));
-		useTotalPages(data.total_pages);
-		useSearchData(data.results);
+		totalPages = data.total_pages;
+		setSearchData(data.results);
 	}
 
 	useEffect(() => {
 		currentPager = 1;
-		useCurrentPage(1);
+		setCurrentPage(currentPager);
 		if (inputSearchValue != "") {
 			setTimeout(() => {
-				useIndexSearch(false);
+				indexSearch = false;
 				execFetch(
 					`https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=pt-BR&query=${inputSearchValue}&page=${currentPage}`
 				);
 			}, 1000);
 		} else {
-			useIndexSearch(true);
+			indexSearch = true;
 			execFetch(`https://api.themoviedb.org/3/trending/all/week?api_key=${apiKey}&language=pt-BR`);
 		}
 	}, [inputSearchValue]);
@@ -42,8 +42,8 @@ export default function Search() {
 
 	async function loadingMoreData() {
 		currentPager++;
+		setCurrentPage(currentPager);
 		console.log(currentPager, totalPages);
-		useCurrentPage(currentPager);
 
 		const url = !indexSearch
 			? `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=pt-BR&query=${inputSearchValue}&page=${currentPager}`
@@ -51,7 +51,7 @@ export default function Search() {
 
 		const data = await fetch(url).then((res) => res.json());
 
-		useSearchData([...searchData, ...data.results]);
+		setSearchData([...searchData, ...data.results]);
 	}
 
 	return (
@@ -66,7 +66,7 @@ export default function Search() {
 				<NavBar currentPage={"search"} />
 				<div className="flex justify-center items-center pb-7">
 					<input
-						className=" text-sm lg:text-base  px-2 py-1 text-white sm:w-[400px] w-2/4 bg-transparent border-2 border-amber-300 rounded-md outline-0"
+						className=" text-sm lg:text-base  px-2 py-1 text-white sm:w-[400px] w-3/4 bg-transparent border-2 border-amber-300 rounded-md outline-0"
 						placeholder="Pesquise seu filme ou série aqui"
 						onChange={handleInput}
 						value={inputSearchValue}
