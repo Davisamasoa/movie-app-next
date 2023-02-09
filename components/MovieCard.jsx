@@ -6,15 +6,17 @@ export function MovieCard({ title, id, imageUrl, hoverWidth, movie }) {
 		? "lg:hover:w-56 md:hover:w-44 w-24 md:w-40"
 		: "md:hover:scale-110 sm:w-48 w-28";
 
-	useEffect(() => {
-		movie(movieWidth.current.clientWidth);
-	}, []);
+	if (movie) {
+		useEffect(() => {
+			movie(movieWidth.current.clientWidth);
+		}, []);
 
-	window.addEventListener("resize", () => {
-		setTimeout(() => {
-			movie(document.querySelector(".moviePic").clientWidth);
-		}, 2500);
-	});
+		window.addEventListener("resize", () => {
+			setTimeout(() => {
+				movie(document.querySelector(".moviePic").clientWidth);
+			}, 2500);
+		});
+	}
 
 	return (
 		<picture className={`cursor-pointer moviePic`} ref={movieWidth}>
