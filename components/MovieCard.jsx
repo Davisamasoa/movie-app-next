@@ -1,12 +1,23 @@
 import { useEffect, useRef } from "react";
 import Link from "next/link";
-export function MovieCard({ title, id, imageUrl, hoverWidth }) {
+export function MovieCard({ title, id, imageUrl, hoverWidth, movie }) {
 	const movieWidth = useRef();
 	const handleHover = hoverWidth
 		? "lg:hover:w-56 md:hover:w-44 w-24 md:w-40"
 		: "md:hover:scale-110 sm:w-48 w-28";
+
+	useEffect(() => {
+		movie(movieWidth.current.clientWidth);
+	}, []);
+
+	window.addEventListener("resize", () => {
+		setTimeout(() => {
+			movie(document.querySelector(".moviePic").clientWidth);
+		}, 2500);
+	});
+
 	return (
-		<picture className={`cursor-pointer moviePic`}>
+		<picture className={`cursor-pointer moviePic`} ref={movieWidth}>
 			<Link
 				target={"_blank"}
 				href={{
