@@ -43,7 +43,6 @@ export default function Search() {
 	async function loadingMoreData() {
 		currentPager++;
 		setCurrentPage(currentPager);
-		console.log(currentPager, totalPages);
 
 		const url = !indexSearch
 			? `https://api.themoviedb.org/3/search/multi?api_key=${apiKey}&language=pt-BR&query=${inputSearchValue}&page=${currentPager}`
