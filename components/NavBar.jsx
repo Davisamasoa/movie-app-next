@@ -36,6 +36,17 @@ export function NavBar(props) {
 					>
 						<Link href={"/series"}>Séries</Link>
 					</li>
+					<li
+						className={
+							props.currentPage !== "search"
+								? "transition duration-200 hover:opacity-70 border-b-2 border-transparent py-2"
+								: "border-b-2 border-amber-300 py-2"
+						}
+					>
+						<Link href={"/search"}>
+							<i className="bi bi-search"></i>
+						</Link>
+					</li>
 					<li>
 						<a
 							target="blank"

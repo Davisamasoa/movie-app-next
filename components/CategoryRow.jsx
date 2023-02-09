@@ -5,7 +5,7 @@ import Skeleton from "./Skeleton";
 
 export function CategoryRow({ title, path }) {
 	const [movies, setMovies] = useState([]);
-	const [movieWidth, setMovieWidth] = useState();
+
 	const moviesDiv = useRef();
 	const buttonsDiv = useRef();
 	let navigate = 0;
@@ -41,7 +41,6 @@ export function CategoryRow({ title, path }) {
 
 	return (
 		<section className=" mt-4 mb-5 z-0 relative ">
-			{console.log(movies)}
 			{!movies[19] ? (
 				<Skeleton />
 			) : (
@@ -73,7 +72,7 @@ export function CategoryRow({ title, path }) {
 						</div>
 
 						{movies.map(({ id, title, poster_path }) => (
-							<MovieCard key={id} id={id} title={title} imageUrl={poster_path} movie={setMovieWidth} />
+							<MovieCard key={id} id={id} title={title} imageUrl={poster_path} hoverWidth={true} />
 						))}
 					</div>
 				</>

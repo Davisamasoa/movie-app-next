@@ -58,3 +58,13 @@ i {
 .skeleton {
 	animation: 1s skeleton infinite linear;
 }
+
+.grid-search {
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+@media (max-width: 640px) {
+	.grid-search {
+		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	}
+}
