@@ -39,7 +39,7 @@ export function MovieCard({ title, id, imageUrl, hoverWidth, movie }) {
 						<div
 							className={`bg-gray-500 transition-all duration-300 rounded-md lg:h-[312px] md:h-[288px] h-[168px] lg:w-52 ${handleHover} flex justify-center items-center text-6xl`}
 						>
-							<i className="bi bi-card-image p-5 text-white bg-transparent"></i>
+							<i className="bi bi-card-image p-5 text-secondaryColor bg-transparent"></i>
 						</div>
 					)}
 				</div>

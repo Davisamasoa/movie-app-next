@@ -46,7 +46,9 @@ export function CategoryRow({ title, path }) {
 				<Skeleton />
 			) : (
 				<>
-					<h2 className="sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-white">{title}</h2>
+					<h2 className="sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-secondaryColor">
+						{title}
+					</h2>
 					<div
 						ref={moviesDiv}
 						onMouseEnter={() => navigateOpacityOn()}
@@ -59,16 +61,16 @@ export function CategoryRow({ title, path }) {
 						>
 							<button
 								onClick={handleNavigateButton}
-								className="-left-5  lg:top-[140px] md:top-[110px]  z-20 text-yellow-200 text-4xl absolute   h-full w-20"
+								className="-left-5  lg:top-[140px] md:top-[110px]  z-20 text-primaryColor text-4xl absolute   h-full w-20"
 							>
-								<i className="text-yellow-200 lg:text-4xl md:text-3xl   bi bi-caret-left"></i>
+								<i className="text-primaryColor lg:text-4xl md:text-3xl   bi bi-caret-left"></i>
 							</button>
 
 							<button
 								onClick={handleNavigateButton}
-								className="-right-5 lg:top-[140px] md:top-[110px] z-20 text-yellow-200 text-4xl absolute   h-full w-20"
+								className="-right-5 lg:top-[140px] md:top-[110px] z-20 text-primaryColor text-4xl absolute   h-full w-20"
 							>
-								<i className="text-yellow-200 lg:text-4xl md:text-3xl bi bi-caret-right"></i>
+								<i className="text-primaryColor lg:text-4xl md:text-3xl bi bi-caret-right"></i>
 							</button>
 						</div>
 

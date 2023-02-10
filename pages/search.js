@@ -65,7 +65,7 @@ export default function Search() {
 				<NavBar currentPage={"search"} />
 				<div className="flex justify-center items-center pb-7">
 					<input
-						className=" text-sm lg:text-base  px-2 py-1 text-white sm:w-[400px] w-3/4 bg-transparent border-2 border-amber-300 rounded-md outline-0"
+						className=" text-sm lg:text-base  px-2 py-1 text-white sm:w-[400px] w-3/4 bg-transparent border-2 border-primaryColor rounded-md outline-0"
 						placeholder="Pesquise seu filme ou série aqui"
 						onChange={handleInput}
 						value={inputSearchValue}
@@ -87,7 +87,7 @@ export default function Search() {
 					<div className="flex justify-center items-center mt-10">
 						<button
 							onClick={loadingMoreData}
-							className="bg-amber-300 rounded-md p-2 sm:hover:bg-transparent sm:hover:text-white border-2 border-amber-300 transition duration-300 "
+							className="bg-primaryColor rounded-md p-2 sm:hover:bg-transparent sm:hover:text-white border-2 border-primaryColor transition duration-300 "
 						>
 							Carregar mais
 						</button>
