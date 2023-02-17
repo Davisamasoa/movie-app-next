@@ -17,7 +17,7 @@ export function CategoryRow({ title, path }) {
 
 	function handleNavigateButton(e) {
 		let num;
-		const gap = 5;
+		const gap = 16;
 
 		if (e.currentTarget.classList[0] == "-left-5") {
 			navigate <= 0 ? navigate : (navigate -= (movieWidth + gap) * 3);
@@ -46,14 +46,14 @@ export function CategoryRow({ title, path }) {
 				<Skeleton />
 			) : (
 				<>
-					<h2 className="sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-secondaryColor">
+					<h2 className="z-0 sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-secondaryColor">
 						{title}
 					</h2>
 					<div
 						ref={moviesDiv}
 						onMouseEnter={() => navigateOpacityOn()}
 						onMouseLeave={() => navigateOpacityOff()}
-						className="flex lg:min-h-[342px] md:min-h-[270px]  gap-[5px] scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
+						className="flex  items-center lg:min-h-[342px] md:min-h-[270px]  gap-4 scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
 					>
 						<div
 							ref={buttonsDiv}
@@ -61,14 +61,14 @@ export function CategoryRow({ title, path }) {
 						>
 							<button
 								onClick={handleNavigateButton}
-								className="-left-5  lg:top-[140px] md:top-[110px]  z-20 text-primaryColor text-4xl absolute   h-full w-20"
+								className="-left-5    z-20 text-primaryColor text-4xl absolute   h-full w-20"
 							>
 								<i className="text-primaryColor lg:text-4xl md:text-3xl   bi bi-caret-left"></i>
 							</button>
 
 							<button
 								onClick={handleNavigateButton}
-								className="-right-5 lg:top-[140px] md:top-[110px] z-20 text-primaryColor text-4xl absolute   h-full w-20"
+								className="-right-5  z-20 text-primaryColor text-4xl absolute   h-full w-20"
 							>
 								<i className="text-primaryColor lg:text-4xl md:text-3xl bi bi-caret-right"></i>
 							</button>
