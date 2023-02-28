@@ -6,13 +6,16 @@ import Skeleton from "./Skeleton";
 export function CategoryRow({ title, path }) {
 	const [movies, setMovies] = useState([]);
 	const [movieWidth, setMovieWidth] = useState();
-
+	const [loading, setLoading] = useState(true);
 	const moviesDiv = useRef();
 	const buttonsDiv = useRef();
 	let navigate = 0;
 
 	useEffect(() => {
-		api.get(path).then(({ data }) => setMovies(data.results));
+		api.get(path).then(({ data }) => {
+			setMovies(data.results);
+			setLoading(false);
+		});
 	}, [path]);
 
 	function handleNavigateButton(e) {
@@ -42,7 +45,7 @@ export function CategoryRow({ title, path }) {
 
 	return (
 		<section className=" mt-4 mb-5 z-0 relative ">
-			{!movies[19] ? (
+			{loading ? (
 				<Skeleton />
 			) : (
 				<>
