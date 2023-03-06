@@ -4,7 +4,7 @@ import { Footer } from "../components/Footer";
 
 export default function Document() {
 	return (
-		<Html>
+		<Html lang="pt-BR">
 			<Head>
 				<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
 			</Head>
