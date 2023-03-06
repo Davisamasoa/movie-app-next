@@ -7,10 +7,10 @@
 /* Position and sizing of burger button */
 .bm-burger-button {
 	position: absolute;
-	width: 36px;
-	height: 30px;
+	width: 25px;
+	height: 20px;
 	left: 36px;
-	top: 36px;
+	top: 40px;
 }
 
 /* Color/shape of burger icon bars */
@@ -20,6 +20,7 @@
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
+	transition: 0.3s;
 	background: var(--secondaryColor);
 }
 
