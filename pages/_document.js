@@ -7,10 +7,6 @@ export default function Document() {
 		<Html>
 			<Head>
 				<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
-				<link
-					rel="stylesheet"
-					href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-				/>
 			</Head>
 			<body className="relative min-h-screen">
 				<Main />

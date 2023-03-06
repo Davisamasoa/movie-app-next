@@ -4,6 +4,7 @@ import { NavBar } from "../components/NavBar";
 export default function custom500() {
 	return (
 		<>
+			<NavBar />
 			<div className="w-full h-screen -mt-16   flex justify-center items-center flex-col gap-5 text-white text-2xl">
 				<h1 className="text-6xl font-bold text-center">Erro 404</h1>
 

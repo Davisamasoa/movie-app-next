@@ -26,10 +26,10 @@ export async function getServerSideProps(context) {
 		const dateFormated = `${
 			dateArray[8] +
 			dateArray[9] +
-			dateArray[7] +
+			"/" +
 			dateArray[5] +
 			dateArray[6] +
-			dateArray[4] +
+			"/" +
 			dateArray[0] +
 			dateArray[1] +
 			dateArray[2] +
@@ -49,14 +49,16 @@ export async function getServerSideProps(context) {
 }
 
 export default function Film({ title, img, description, releaseDate }) {
+	const titlePage = `${title} - Movie App`;
+
 	return (
 		<>
 			<Head>
-				<title>{title} - Movie App</title>
+				<title>{titlePage}</title>
 			</Head>
 
+			<NavBar />
 			<div className="md:px-9 sm:px-7 px-4 py-4 App">
-				<NavBar />
 				<main className="w-full mt-24 flex justify-center items-center">
 					<div className="text-white flex flex-col sm:flex-row  w-[800px] gap-10 ">
 						<img className="lg:w-80 md:w-72 sm:w-64  w-full" src={`https://image.tmdb.org/t/p/w500/${img}`} />

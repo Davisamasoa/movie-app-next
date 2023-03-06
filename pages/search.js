@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { MovieCard } from "../components/MovieCard";
 import { NavBar } from "../components/NavBar";
 import { apiKey } from "./api/services/api";
+import { MoonLoader } from "react-spinners";
 
 let currentPager = 1;
 let totalPages;
@@ -10,6 +11,7 @@ let indexSearch = true;
 export default function Search() {
 	const [inputSearchValue, useInputSearchValue] = useState("");
 	const [searchData, setSearchData] = useState();
+	const [loading, setLoading] = useState(false);
 
 	const [currentPage, setCurrentPage] = useState(1);
 	async function execFetch(url) {
@@ -41,6 +43,7 @@ export default function Search() {
 	}
 
 	async function loadingMoreData() {
+		!loading ? setLoading(true) : undefined;
 		currentPager++;
 		setCurrentPage(currentPager);
 
@@ -51,6 +54,7 @@ export default function Search() {
 		const data = await fetch(url).then((res) => res.json());
 
 		setSearchData([...searchData, ...data.results]);
+		setLoading(false);
 	}
 
 	return (
@@ -61,8 +65,8 @@ export default function Search() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 
+			<NavBar currentPage={"search"} />
 			<div className="md:px-9 sm:px-7 px-4 py-4 App">
-				<NavBar currentPage={"search"} />
 				<div className="flex justify-center items-center pb-7">
 					<input
 						className=" text-sm lg:text-base  px-2 py-1 text-white sm:w-[400px] w-3/4 bg-transparent border-2 border-primaryColor rounded-md outline-0"
@@ -85,11 +89,14 @@ export default function Search() {
 
 				{totalPages > 1 && currentPage < totalPages ? (
 					<div className="flex justify-center items-center mt-10">
-						<button
-							onClick={loadingMoreData}
-							className="bg-primaryColor rounded-md p-2 sm:hover:bg-transparent sm:hover:text-white border-2 border-primaryColor transition duration-300 "
-						>
-							Carregar mais
+						<button onClick={loadingMoreData}>
+							<span className="text-black flex justify-center items-center p-2 rounded-md bg-primaryColor">
+								{loading ? (
+									<MoonLoader className="" size={26} loading={true} color="black" />
+								) : (
+									"Carregar mais"
+								)}
+							</span>
 						</button>
 					</div>
 				) : (
