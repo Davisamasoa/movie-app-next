@@ -3,6 +3,8 @@ import { api } from "../pages/api/services/api";
 import { MovieCard } from "./MovieCard";
 import Skeleton from "./Skeleton";
 
+import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from "react-icons/io";
+
 export function CategoryRow({ title, path }) {
 	const [movies, setMovies] = useState([]);
 	const [movieWidth, setMovieWidth] = useState();
@@ -22,7 +24,7 @@ export function CategoryRow({ title, path }) {
 		let num;
 		const gap = 8;
 
-		if (e.currentTarget.classList[0] == "-left-5") {
+		if (e.currentTarget.classList[0] == "left-1") {
 			navigate <= 0 ? navigate : (navigate -= (movieWidth + gap) * 3);
 			moviesDiv.current.scrollLeft = navigate;
 		} else {
@@ -33,47 +35,38 @@ export function CategoryRow({ title, path }) {
 		}
 	}
 
-	function navigateOpacityOn() {
-		buttonsDiv.current.className =
-			"buttons absolute w-full h-50 hidden md:block md:opacity-100 transition duration-200 opacity-0  z-20";
-	}
-
-	function navigateOpacityOff() {
-		buttonsDiv.current.className =
-			"buttons absolute w-full h-50 hidden md:block md:opacity-0 transition duration-200 opacity-0  z-20";
-	}
-
 	return (
-		<section className=" mt-4 mb-5 z-0 relative ">
+		<section className="mt-4 mb-5 relative ">
 			{loading ? (
 				<Skeleton />
 			) : (
 				<>
-					<h2 className="z-0 sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-secondaryColor">
+					<h2 className="sm:text-3xl text-2xl tracking-wide font-semibold mb-3 text-secondaryColor">
 						{title}
 					</h2>
 					<div
 						ref={moviesDiv}
-						onMouseEnter={() => navigateOpacityOn()}
-						onMouseLeave={() => navigateOpacityOff()}
-						className="flex  items-center lg:min-h-[342px] md:min-h-[270px]  gap-2 scroll-smooth max-w-none overflow-y-hidden  md:overflow-x-auto     z-0 row"
+						className="flex items-center lg:min-h-[342px] md:min-h-[270px] gap-2 scroll-smooth max-w-none overflow-x-hidden"
 					>
-						<div
-							ref={buttonsDiv}
-							className="buttons absolute w-full h-50 hidden md:block md:opacity-0 transition duration-200 opacity-0  z-20"
-						>
+						<div className="buttons z-10  top-12 lg:min-h-[342px] md:min-h-[270px] hover:md:opacity-100 left-0  absolute w-full h-50 hidden md:block md:opacity-0 transition duration-200 opacity-0">
 							<button
 								onClick={handleNavigateButton}
-								className="-left-5    z-20 text-primaryColor text-4xl absolute   h-full w-20"
+								className="left-1  text-primaryColor text-4xl absolute h-full w-20"
 							>
-								<i className="text-primaryColor lg:text-4xl md:text-3xl   bi bi-caret-left"></i>
+								<IoMdArrowDropleftCircle
+									size={40}
+									className="text-primaryColor bg-black/[0.6] rounded-full lg:text-4xl md:text-3xl"
+								/>
 							</button>
 
 							<button
 								onClick={handleNavigateButton}
-								className="-right-5  z-20 text-primaryColor text-4xl absolute   h-full w-20"
+								className="-right-[35px] text-primaryColor text-4xl absolute h-full w-20"
 							>
-								<i className="text-primaryColor lg:text-4xl md:text-3xl bi bi-caret-right"></i>
+								<IoMdArrowDroprightCircle
+									size={40}
+									className="text-primaryColor bg-black/[0.6] rounded-full lg:text-4xl md:text-3xl"
+								/>
 							</button>
 						</div>
 
