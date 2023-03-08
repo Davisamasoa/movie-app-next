@@ -11,6 +11,7 @@ export function CategoryRow({ title, path }) {
 	const [loading, setLoading] = useState(true);
 	const moviesDiv = useRef();
 	const buttonsDiv = useRef();
+
 	let navigate = 0;
 
 	useEffect(() => {
@@ -46,12 +47,17 @@ export function CategoryRow({ title, path }) {
 					</h2>
 					<div
 						ref={moviesDiv}
+						onMouseEnter={() => buttonsDiv.current.classList.replace("md:opacity-0", "md:opacity-100")}
+						onMouseLeave={() => buttonsDiv.current.classList.replace("md:opacity-100", "md:opacity-0")}
 						className="flex items-center lg:min-h-[342px] md:min-h-[270px] gap-2 scroll-smooth max-w-none overflow-x-hidden"
 					>
-						<div className="buttons z-10  top-12 lg:min-h-[342px] md:min-h-[270px] hover:md:opacity-100 left-0  absolute w-full h-50 hidden md:block md:opacity-0 transition duration-200 opacity-0">
+						<div
+							ref={buttonsDiv}
+							className="md:opacity-0 z-50 buttons top-2/4  left-0 absolute w-full h-50 hidden md:block opacity-0 transition-opacity duration-200"
+						>
 							<button
 								onClick={handleNavigateButton}
-								className="left-1  text-primaryColor text-4xl absolute h-full w-20"
+								className="left-1 z-20  text-primaryColor text-4xl absolute h-full w-20"
 							>
 								<IoMdArrowDropleftCircle
 									size={40}
@@ -61,7 +67,7 @@ export function CategoryRow({ title, path }) {
 
 							<button
 								onClick={handleNavigateButton}
-								className="-right-[35px] text-primaryColor text-4xl absolute h-full w-20"
+								className="-right-[35px] z-20 text-primaryColor text-4xl absolute h-full w-20"
 							>
 								<IoMdArrowDroprightCircle
 									size={40}
