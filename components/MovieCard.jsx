@@ -30,6 +30,9 @@ export function MovieCard({ title, id, imageUrl, hoverWidth, movie }) {
 				<div className="relative">
 					{imageUrl ? (
 						<img
+							width={208}
+							height={312}
+							loading="lazy"
 							className={`transition-all duration-300 rounded-md lg:w-52 md:hover:scale-105 ${handleHover}`}
 							src={`https://image.tmdb.org/t/p/w500/${imageUrl}`}
 						/>

@@ -49,7 +49,7 @@ export function CategoryRow({ title, path }) {
 						ref={moviesDiv}
 						onMouseEnter={() => buttonsDiv.current.classList.replace("md:opacity-0", "md:opacity-100")}
 						onMouseLeave={() => buttonsDiv.current.classList.replace("md:opacity-100", "md:opacity-0")}
-						className="flex items-center lg:min-h-[342px] md:min-h-[270px] gap-2 scroll-smooth max-w-none overflow-x-auto sm:overflow-x-hidden"
+						className="flex items-center lg:min-h-[342px] md:min-h-[270px] gap-2 scroll-smooth max-w-none overflow-x-auto lg:overflow-x-hidden"
 					>
 						<div
 							ref={buttonsDiv}
